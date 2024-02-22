@@ -64,7 +64,7 @@
 # Создаем файл .env и заполняем его (S_K переносим из файла settings.py):
 
     SECRET_KEY=''
-    DEBUG=True
+    DJANGO_DEBUG=True
     ALLOWED_HOSTS='127.0.0.1 LOCALHOST localhost'
     PG_DATABASE='postgres'
     PG_USER='postgres'

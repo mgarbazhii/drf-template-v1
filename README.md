@@ -12,11 +12,11 @@
 
     pip install --upgrade pip
 
-# Или устанавливаем все из файла requirements.txt
+# Устанавливаем все из файла requirements.txt
 
     pip install -r requirements.txt
 
-# Создаем файл .env и заполняем его (S_K переносим из файла settings.py):
+# Создаем файл .env и заполняем его (S_K из генератора):
 
     SECRET_KEY=''
     DJANGO_DEBUG=True

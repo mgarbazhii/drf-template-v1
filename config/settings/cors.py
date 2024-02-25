@@ -1,5 +1,11 @@
+from .base import INSTALLED_APPS
+
+INSTALLED_APPS += [
+    'corsheaders',
+]
+
 CORS_ALLOWED_ORIGINS = [
-    "https://vbg-hotels.club",
+    "https://example.com",
     "http://localhost:8080",
     "http://127.0.0.1:8000",
 ]

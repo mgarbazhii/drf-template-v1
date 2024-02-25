@@ -18,7 +18,7 @@
 
 # Устанавливаем необходимые пакеты
 
-    pip install djangorestframework django-filter django-environ django-cors-headers djoser
+    pip install djangorestframework django-filter django-environ django-cors-headers djoser drf-spectacular
 
 # Устанавливаем вспомогательные пакеты для разработки и отладки
 

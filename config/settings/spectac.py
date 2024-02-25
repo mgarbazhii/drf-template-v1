@@ -1,6 +1,11 @@
+from .base import INSTALLED_APPS
+
+INSTALLED_APPS += [
+    'drf_spectacular',
+]
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Holiday project API',
-    'DESCRIPTION': 'API for holiday project',
+    'TITLE': 'Project API',
+    'DESCRIPTION': 'API for project',
     'VERSION': '1.0.0',
 
     'SERVE_PERMISSIONS': ['rest_framework.permissions.AllowAny'],

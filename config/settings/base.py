@@ -3,6 +3,7 @@ from pathlib import Path
 import environ
 import os
 
+# На тот случай потребуется 2 точки отсчета (в данном случае нет необходимости так как BASE_DIR = root() )
 root = environ.Path(__file__) - 3
 env = environ.Env()
 env.read_env(env.str(root(), '.env'))
@@ -23,14 +24,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-# Add installed apps
+# Add installed apps (могут быть удалены: Django Extensions используется только во время разработки, Django Filters не используется в этом проекте но возможно будет использоваться в вашем)
 INSTALLED_APPS += [
     'django_extensions',
-    'rest_framework',
     'django_filters',
-    'corsheaders',
-    'djoser',
 ]
+# Add custom apps
+INSTALLED_APPS += [
+    'users',
+    'api',
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,8 +79,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
-LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'ru-RU'
+TIME_ZONE = 'europe/moscow'
 USE_I18N = True
 USE_TZ = True
 
@@ -103,3 +107,8 @@ DATABASES = {
         'PORT': env.str('DB_PORT', default='5432'),
     },
 }
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'users.authentication.EmailAuthBackend',
+]

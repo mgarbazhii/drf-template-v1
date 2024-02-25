@@ -36,7 +36,7 @@ INSTALLED_APPS += [
 # Add custom apps
 INSTALLED_APPS += [
     'users',
-    # 'api',
+    'api',
 ]
 INSTALLED_APPS += [
     'drf_spectacular',
